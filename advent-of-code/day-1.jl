@@ -16,6 +16,6 @@ input = map(x -> x == "" ? 0 : parse(Int64, x), input)
 zero_indices = findall(x -> x == 0, input)
 
 for j in length(zero_indices)
-    input[zero_indices[j]] = sum(input[zero_indices[j] + 1:zero_indices[j + 1] - 1])
+    input[zero_indices[j]] = sum(input[zero_indices[j]+1:zero_indices[j+1]-1])
 end
 
