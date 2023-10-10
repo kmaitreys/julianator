@@ -1,21 +1,37 @@
-# Day 1 of Advent of Code 2022
+input = open("/home/ws2/Documents/stuff/julianator/advent-of-code/input.txt", "r")
+input_data = readlines(input)
+close(input)
 
-# Read in the input file
+int_array = zeros(Int32, length(input_data))
 
-input = open("/home/maitrey/Documents/maitrey/julia/advent-of-code/input.txt") do file
-    readlines(file)
+for i in eachindex(input_data)
+    if isempty(input_data[i])
+        continue
+    else
+        int_array[i] = parse(Float64, input_data[i])
+    end
 end
 
-# Convert empty strings to 0 and convert the strings to integers
+tot_calories = Int32[]
+global tmp = 0
 
-input = map(x -> x == "" ? 0 : parse(Int64, x), input)
-
-
-# Get indices of zeros in the input
-
-zero_indices = findall(x -> x == 0, input)
-
-for j in length(zero_indices)
-    input[zero_indices[j]] = sum(input[zero_indices[j]+1:zero_indices[j+1]-1])
+for i in eachindex(int_array)
+    if int_array[i] != 0
+        tmp = tmp + int_array[i]
+    else
+        push!(tot_calories, tmp)
+        global tmp = 0
+    end
 end
+
+println(maximum(tot_calories))
+
+sort!(tot_calories, rev=true)
+
+print(sum(tot_calories[1:3]))
+
+
+    
+
+
 
