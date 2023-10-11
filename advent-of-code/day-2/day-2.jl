@@ -37,15 +37,16 @@ function get_score_p1(op_move, pl_move)
     return score
 end
 
-global total_score_p1 = 0
 
-for i in eachindex(input_data)
-    game = split(input_data[i], " ")
-    global total_score_p1 = total_score_p1 + get_score_p1(game[1], game[2]) 
+function get_total_score_p1(input_data)
+    total_score_p1 = 0
+    for i in eachindex(input_data)
+        game = split(input_data[i], " ")
+        total_score_p1 = total_score_p1 + get_score_p1(game[1], game[2]) 
+    end
+    return total_score_p1
 end
 
-
-println(total_score_p1)
 
 
 function get_score_p2(op_move, pl_move)
@@ -93,13 +94,17 @@ function get_score_p2(op_move, pl_move)
     return score
 end
 
-
-global total_score_p2 = 0
-
-for i in eachindex(input_data)
-    game = split(input_data[i], " ")
-    global total_score_p2 = total_score_p2 + get_score_p2(game[1], game[2]) 
+function get_total_score_p2(input_data)
+    total_score_p2 = 0
+    for i in eachindex(input_data)
+        game = split(input_data[i], " ")
+        total_score_p2 = total_score_p2 + get_score_p2(game[1], game[2]) 
+    end
+    return total_score_p2
 end
 
+part_1 = get_total_score_p1(input_data)
+part_2 = get_total_score_p2(input_data)
 
-println(total_score_p2)
+println("The answer to first part is $part_1.")
+println("The answer to second part is $part_2.")
