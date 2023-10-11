@@ -57,9 +57,3 @@ part_2 = get_badge_value(lines)
 println("The total value is $part_1.")
 println("The total badge value is $part_2.")
 
-
-struct Point
-    x::Float64
-    y::Float64
-end
-
