@@ -1,4 +1,4 @@
-input = open("advent-of-code/day-2/day-2.txt", "r")
+input = open("aoc-22/day-2/day-2.txt", "r")
 input_data = readlines(input)
 close(input)
 
