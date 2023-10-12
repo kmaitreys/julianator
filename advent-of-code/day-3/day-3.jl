@@ -1,4 +1,4 @@
-input = open("/home/ws2/Documents/stuff/julianator/advent-of-code/day-3/day-3.txt", "r")
+input = open("advent-of-code/day-3/day-3.txt", "r")
 lines = readlines(input)
 close(input)
 
