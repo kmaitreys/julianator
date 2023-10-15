@@ -33,8 +33,6 @@ function get_overlaps(lines)
         elf_2_end = parse(Int32, elf_2_end)
         elf_1_tasks = range(elf_1_start, elf_1_end)|>collect
         elf_2_tasks = range(elf_2_start, elf_2_end)|>collect
-        # elf_1_set = Set{Int32}(elf_1_start, elf_1_end)
-        # elf_2_set = Set{Int32}(elf_2_start, elf_2_end)
         overlaps = intersect(elf_1_tasks, elf_2_tasks)
         if !isempty(overlaps)
             counter = counter + 1
